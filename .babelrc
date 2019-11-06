@@ -1,0 +1,39 @@
+{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "@babel/plugin-syntax-dynamic-import",
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ],
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./src"
+        ],
+        "alias": {
+          "components": "./src/components",
+          "utils": "./src/utils",
+          "config": "./src/config",
+          "mock": "./src/mock",
+          "pages": "./src/pages",
+          "store": "./src/store",
+          "static": "./src/static",
+          "hooks": "./src/hooks"
+        }
+      }
+    ]
+  ]
+}
