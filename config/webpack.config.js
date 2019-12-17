@@ -1,8 +1,13 @@
-const webpack = require('webpack')
+// eslint-disable
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
+  entry: './src/entry-client.jsx',
+  output: {
+    filename: 'main.js',
+    path: path.resolve(__dirname, '../dist/static'),
+    publicPath: '/',
+  },
   module: {
     rules: [
       {
@@ -27,19 +32,7 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './public/index.html',
-      favicon: './public/favicon.ico',
-      title: '洋葱数学',
-    }),
-    new webpack.DefinePlugin(globalConfig),
-  ],
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
-    alias: {
-      'styles': path.resolve(__dirname, '../src/styles'),
-      'static': path.resolve(__dirname, '../src/static'),
-    },
+    extensions: ['.js', '.jsx', '.json'],
   },
 }

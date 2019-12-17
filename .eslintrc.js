@@ -5,14 +5,14 @@ module.exports = {
     node: true,
     es6: true
   },
-  extends: ["airbnb"],
-  parser: "@babel/parser",
+  extends: "airbnb",
   parserOptions: {
+    parser: "@babel/parser",
     ecmaFeatures: {
       jsx: true
     },
     ecmaVersion: 2018,
-    sourceType: "module"
+    sourceType: "module",
   },
   plugins: ["react"],
   settings: {
@@ -34,17 +34,8 @@ module.exports = {
     "no-var": 2, // 禁止使用var
     "max-len": [2, 200], // 每行最多200个字符
     "max-lines": [2, 500], // 一个文件最多500行
+    "react/prop-types": 0,
+    "jsx-a11y/label-has-associated-control": 0,
+    "react/jsx-props-no-spreading": 0,
   },
-  overrides: [
-    {
-      files: ["config/*"],
-      rules: {
-        "@typescript-eslint/no-var-requires": "off"
-      }
-    }
-  ],
-  globals: {
-    pingpp: true,
-    pingpp_ui: true
-  }
 };
